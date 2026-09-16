@@ -16,6 +16,18 @@
   .gal-tile .cap p{ font-size: .8rem; color: var(--body-c); margin-top: 3px; }
   @media (max-width: 860px){ .gal-grid{ grid-template-columns: 1fr 1fr; } }
   @media (max-width: 560px){ .gal-grid{ grid-template-columns: 1fr; } }
+  .video-wrap{
+  position:relative;
+  aspect-ratio:16/9;
+  background:#000;
+}
+
+.video-wrap iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
 </style>
 </head>
 <body>
@@ -35,25 +47,37 @@
   </div>
 </nav>
 
-<header class="page-hero">
-  <div class="wrap">
-    <div class="section-label">Galeri</div>
-    <h1>Momen dari lapangan</h1>
-    <p>Training, coaching, dan kunjungan ke sekolah-sekolah binaan.</p>
+<div class="gal-tile">
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/Gqgc6m437qk?si=m65TYwjLanOi4ZPc"
+      title="Pembelajaran Mendalam (PM) IPAS Kls 3 SD (Sumber-sumber Energi)"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
   </div>
+
+  <div class="cap">
+    <h3>Contoh Pembelajaran</h3>
+    <p>Praktik pembelajaran yang dilakukan Coach Sugeng</p>
+  </div>
+</div>
 </header>
 
 <section>
-  <div class="wrap">
-    <div class="gal-note">
-      Ini ilustrasi sementara pengganti foto asli. Tinggal ganti tiap <code>&lt;img&gt;</code> atau blok <code>.art</code> di <code>galeri.html</code> dengan foto kegiatan — taruh filenya di folder <code>assets/</code>, lalu update <code>src</code>-nya.
-    </div>
-    <div class="gal-grid">
-      <div class="gal-tile">
-        <div class="art"><svg viewBox="0 0 24 24"><circle cx="8" cy="7" r="2.4"/><circle cx="16" cy="7" r="2.4"/><path d="M3.5 18c.6-3 2.3-4.6 4.5-4.6s3.9 1.6 4.5 4.6"/><path d="M11.5 18c.6-3 2.3-4.6 4.5-4.6s3.9 1.6 4.5 4.6"/><path d="M9 10.5 12 13l3-2.5"/></svg></div>
-        <video controls style="width:100%; border-radius:14px;">
-  <source src="assets/nurulimam.mp4" type="video/mp4">
+<div class="gal-tile">
+  <video controls style="width:100%; display:block;">
+    <source src="assets/nurulimam.mp4" type="video/mp4">
+  </video>
+
+  <div class="cap">
+    <h3>Training di SIT Nurul Imam</h3>
+    <p>Dokumentasi Kegiatan Training &amp; Pendampingan Sekolah</p>
+  </div>
+</div>
 </video>
+  
         <div class="art"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M3 8.5h18"/><path d="M8 20h8"/><path d="M12 17v3"/></svg></div>
         <div class="cap"><h3>Training Diklat JSIT</h3><p>Materi kepemimpinan &amp; kurikulum</p></div>
       </div>
