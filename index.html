@@ -75,14 +75,46 @@
   .mock-tile.dark{ background: linear-gradient(135deg, var(--blue) 0%, var(--blue-2) 100%); }
   @media (max-width: 780px){ .smart-grid{ grid-template-columns: 1fr; gap: 32px; } }
 
-  .test-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .test-card{ border-radius: 18px; background: var(--white); box-shadow: var(--shadow-sm); border: 1px solid var(--rule); padding: 24px; }
-  .test-stars{ color: var(--blue); font-size: .85rem; letter-spacing:2px; }
-  .test-card p.body{ margin-top: 12px; color: var(--body-c); font-size: .92rem; }
-  .test-who{ display:flex; align-items:center; gap:10px; margin-top:18px; }
-  .avatar{ width:36px; height:36px; border-radius:50%; background: var(--blue-pale); color: var(--blue-deep); font-weight:700; font-size:.82rem; display:flex; align-items:center; justify-content:center; }
-  .test-who .name{ font-size: .88rem; font-weight:700; color: var(--ink); }
-  @media (max-width: 860px){ .test-grid{ grid-template-columns: 1fr; } }
+  .test-grid{
+  display:flex;
+  justify-content:center;
+}
+
+.test-card{
+  width:100%;
+  max-width:720px;
+  border-radius:18px;
+  background:var(--white);
+  box-shadow:var(--shadow-sm);
+  border:1px solid var(--rule);
+  padding:28px 32px;
+}
+
+.test-stars{
+  color:var(--blue);
+  font-size:.85rem;
+  letter-spacing:2px;
+}
+
+.test-card p.body{
+  margin-top:12px;
+  color:var(--body-c);
+  font-size:.92rem;
+  line-height:1.65;
+}
+
+.test-who{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+}
+
+.test-who .name{
+  font-size:.88rem;
+  font-weight:700;
+  color:var(--ink);
+}
 </style>
 </head>
 <body>
@@ -267,24 +299,48 @@
 
 <section>
   <div class="wrap">
+
     <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
       <div class="section-label">Testimoni</div>
       <h2>Kata sekolah yang pernah didampingi</h2>
     </div>
+
     <div class="test-grid">
+
       <div class="test-card">
+
         <div class="test-stars">★★★★★</div>
-        <p class="body">“Pak Sugeng membantu kami melihat persoalan sekolah bukan hanya dari sisi operasional, tetapi dari bagaimana seluruh sistem bisa bergerak lebih terarah. Pendekatannya praktis, terstruktur, dan sangat relevan dengan kondisi sekolah kami.”</p>
-        <div class="who">Mr. N — Ketua Yayasan, Yayasan Islam Terpadu di Jawa Barat</div>
+
+        <p class="body">
+          “Pak Sugeng membantu kami melihat persoalan sekolah bukan hanya
+          dari sisi operasional, tetapi dari bagaimana seluruh sistem bisa
+          bergerak lebih terarah. Pendekatannya praktis, terstruktur, dan
+          sangat relevan dengan kondisi sekolah kami.”
+        </p>
+
+        <div class="test-who">
+          <div class="avatar">MN</div>
+
+          <div>
+            <div class="name">Mr. N</div>
+            <div style="font-size:.78rem;color:var(--body-c);margin-top:2px;">
+              Ketua Yayasan, Yayasan Islam Terpadu di Jawa Barat
+            </div>
+          </div>
+        </div>
+
       </div>
-      </div>
+
     </div>
+
     <div style="text-align:center; margin-top:32px;">
-      <a href="testimoni.html" class="btn btn-ghost dark">Lihat semua testimoni</a>
+      <a href="testimoni.html" class="btn btn-ghost dark">
+        Lihat semua testimoni
+      </a>
     </div>
+
   </div>
 </section>
-
 <section>
   <div class="wrap">
     <div class="cta-banner">
