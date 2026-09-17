@@ -134,4 +134,14 @@ footer .copy{ margin-top: 22px; font-size: .8rem; color: #9aa1ad; }
   .pillars{ grid-template-columns: 1fr; }
   .wrap{ padding: 0 20px; }
   .cta-banner{ padding: 36px 24px; }
+  .smart-photo{
+  border-radius:24px;
+  overflow:hidden;
+}
+
+.smart-photo img{
+  width:100%;
+  display:block;
+  height:auto;
+}
 }
