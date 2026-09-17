@@ -1,1 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugeng Susianto, M.Pd — Coach &amp; Konsultan Sekolah</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero{ position:relative; padding: 70px 0 40px; overflow:hidden; background: linear-gradient(180deg, var(--blue-pale) 0%, var(--white) 55%); }
+  .hero::before{ content:""; position:absolute; top:-140px; left:-100px; width:360px; height:360px; background: var(--blue-pale-2); border-radius:50%; filter: blur(4px); opacity:.8; }
+  .hero::after{ content:""; position:absolute; top:80px; right:-120px; width:280px; height:280px; background: var(--blue-pale); border-radius:50%; opacity:.9; }
+  .hero .wrap{ position:relative; }
+  .hero-head{ max-width: 640px; margin: 0 auto; text-align:center; }
+  .hero-head .section-label{ }
+  .hero-head h1{ font-size: clamp(2.1rem, 4.6vw, 3.1rem); line-height: 1.14; margin-top: 8px; }
+  .hero-head h1 span{ color: var(--blue); }
+  .hero-head p{ margin-top: 18px; color: var(--body-c); font-size: 1.05rem; max-width: 480px; margin-left:auto; margin-right:auto; }
+  .hero-ctas{ margin-top: 28px; display:flex; gap:14px; justify-content:center; flex-wrap: wrap; }
 
+  .hero-visual{ position:relative; max-width: 640px; margin: 56px auto 0; }
+  .hero-photo-frame{ position:relative; z-index:1; border-radius: 28px; overflow:hidden; aspect-ratio: 16/10; background: var(--ink); box-shadow: var(--shadow); }
+  .hero-photo-frame img{ width:100%; height:100%; object-fit:cover; object-position: center 15%; }
+  .hero-photo-frame .chip{ position:absolute; top:16px; left:16px; background: rgba(0,0,0,0.45); color:#fff; font-size:.72rem; font-weight:700; padding: 6px 11px; border-radius: 100px; display:flex; align-items:center; gap:6px; }
+  .hero-photo-frame .chip .dot{ width:7px; height:7px; border-radius:50%; background:#ff5b5b; }
+  .float-card{ position:absolute; z-index:2; background: var(--white); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; }
+  .float-quote{ top: -18px; left: -34px; max-width: 200px; }
+  .float-quote p{ font-family:"Fraunces", serif; font-style:italic; font-size: .85rem; color: var(--ink); line-height:1.45; }
+  .float-quote span{ display:block; margin-top:8px; font-size:.75rem; color: var(--blue); font-weight:700; font-style:normal; }
+  .float-stat{ bottom: -22px; right: -30px; text-align:right; }
+  .float-stat .num{ font-size: 1.5rem; font-weight:800; color: var(--ink); }
+  .float-stat .lbl{ font-size: .78rem; color: var(--body-c); margin-top:2px; }
+  @media (max-width: 720px){ .float-card{ display:none; } .hero-visual{ margin-top: 40px; } }
+
+  .process-panel{ background: var(--white); border-radius: 28px; box-shadow: var(--shadow); padding: 46px 40px; }
+  .process-row{ display:grid; grid-template-columns: repeat(5,1fr); gap: 8px; align-items:start; position:relative; }
+  .process-step{ text-align:center; padding: 0 6px; }
+  .process-step .icon-badge{ width:48px; height:48px; border-radius:14px; margin:0 auto 14px; background: linear-gradient(135deg, var(--blue) 0%, var(--blue-2) 100%); display:flex; align-items:center; justify-content:center; }
+  .process-step svg{ width:22px; height:22px; stroke:#fff; fill:none; stroke-width:1.8; }
+  .process-step h3{ font-size: .92rem; color: var(--ink); }
+  .process-step p{ font-size: .78rem; color: var(--body-c); margin-top:6px; }
+  .process-arrow{ position:absolute; top:22px; font-size:1.1rem; color: var(--blue-pale-2); }
+  @media (max-width: 860px){ .process-row{ grid-template-columns: 1fr 1fr; gap: 28px; } .process-panel{ padding: 32px 22px; } }
+  @media (max-width: 520px){ .process-row{ grid-template-columns: 1fr; } }
+
+  .split{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items:center; }
+  .split-photo{ border-radius: 24px; overflow:hidden; aspect-ratio: 4/5; }
+  .split-photo img{ width:100%; height:100%; object-fit:cover; object-position: center 15%; }
+  .split-stats{ display:flex; gap: 34px; margin-top: 28px; }
+  .split-stats .num{ font-size: 1.7rem; font-weight:800; color: var(--ink); }
+  .split-stats .lbl{ font-size: .82rem; color: var(--body-c); margin-top:4px; }
+  @media (max-width: 780px){ .split{ grid-template-columns: 1fr; gap: 32px; } }
+
+  .cat-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .cat-card{ display:block; text-decoration:none; color:inherit; padding: 22px; border-radius: 18px; background: var(--white); box-shadow: var(--shadow-sm); border: 1px solid var(--rule); transition: transform .15s ease; }
+  .cat-card:hover{ transform: translateY(-3px); }
+  .cat-card .icon-badge{ width:40px; height:40px; border-radius:11px; margin-bottom:14px; display:flex; align-items:center; justify-content:center; }
+  .cat-card svg{ width:19px; height:19px; stroke:#fff; fill:none; stroke-width:1.8; }
+  .cat-card h3{ font-size: .95rem; color: var(--ink); }
+  .cat-card p{ font-size: .78rem; color: var(--body-c); margin-top:4px; }
+  @media (max-width: 780px){ .cat-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px){ .cat-grid{ grid-template-columns: 1fr; } }
+
+  .smart-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items:center; }
+  .checklist{ list-style:none; margin: 22px 0 0; padding:0; display:flex; flex-direction:column; gap: 14px; }
+  .checklist li{ display:flex; gap: 12px; font-size: .96rem; color: var(--ink); font-weight:600; }
+  .checklist li::before{ content:"✓"; width:22px; height:22px; border-radius:50%; background: var(--blue); color:#fff; font-size:.7rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+  .mock{ background: var(--white); border-radius: 24px; box-shadow: var(--shadow); padding: 22px; }
+  .mock-topbar{ display:flex; gap:6px; margin-bottom:16px; }
+  .mock-topbar span{ width:9px; height:9px; border-radius:50%; background: var(--rule); }
+  .mock-bar{ height: 12px; border-radius: 6px; background: var(--blue-pale); margin-bottom:10px; }
+  .mock-bar.short{ width: 55%; }
+  .mock-bar.blue{ background: var(--blue); width:35%; }
+  .mock-row{ display:flex; gap:10px; margin-top:18px; }
+  .mock-tile{ flex:1; aspect-ratio:1; border-radius:14px; background: var(--blue-pale); }
+  .mock-tile.dark{ background: linear-gradient(135deg, var(--blue) 0%, var(--blue-2) 100%); }
+  @media (max-width: 780px){ .smart-grid{ grid-template-columns: 1fr; gap: 32px; } }
+
+  .test-grid{
+  display:flex;
+  justify-content:center;
+}
+
+.test-card{
+  width:100%;
+  max-width:720px;
+  border-radius:18px;
+  background:var(--white);
+  box-shadow:var(--shadow-sm);
+  border:1px solid var(--rule);
+  padding:28px 32px;
+}
+
+.test-stars{
+  color:var(--blue);
+  font-size:.85rem;
+  letter-spacing:2px;
+}
+
+.test-card p.body{
+  margin-top:12px;
+  color:var(--body-c);
+  font-size:.92rem;
+  line-height:1.65;
+}
+
+.test-who{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+}
+
+.test-who .name{
+  font-size:.88rem;
+  font-weight:700;
+  color:var(--ink);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand">Coach Sugeng Susianto, M.Pd</a>
+    <div class="navlinks">
+      <a href="index.html" class="active">Beranda</a>
+      <a href="profil.html">Profil &amp; Riwayat</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a href="kontak.html" class="navcta">Jadwalkan Sesi</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-head">
+      <div class="section-label">Coach &amp; Konsultan Sekolah</div>
+      <h1>Belajar. Berkembang. Bermanfaat.</span></h1>
+      <p>Lebih dari 20 tahun di dunia pendidikan, mulai dari menjadi kepala sekolah hingga mengelola kurikulum, SDM, keuangan, dan humas di lima unit sekolah. Kini, pengalaman tersebut digunakan untuk membantu sekolah dan yayasan menyelesaikan persoalan yang mereka hadapi.</p>
+      <div class="hero-ctas">
+        <a href="kontak.html" class="btn btn-gold">Jadwalkan Sesi</a>
+        <a href="profil.html" class="btn btn-ghost">Kenali Rekam Jejaknya</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+        <img src="assets/foto-pak-sugeng.jpg" alt="Coach Sugeng Susianto, M.Pd">
+      </div>
+  </div>
+</header>
+
+<div class="quote-strip">
+  <div class="wrap">
+    <blockquote>“Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya.”</blockquote>
+    <cite>HR. Ahmad</cite>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <div class="section-label">Cara Kerja</div>
+      <h2>Proses pendampingan, langkah demi langkah</h2>
+    </div>
+    <div class="process-panel">
+      <div class="process-row">
+        <div class="process-step">
+          <div class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></svg></div>
+          <h3>Diagnosa Awal</h3>
+          <p>Memahami kondisi sekolah</p>
+        </div>
+        <div class="process-step">
+          <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M4 5.5h7.2v14L4 18.2z"/><path d="M20 5.5h-7.2v14L20 18.2z"/></svg></div>
+          <h3>Rancang Program</h3>
+          <p>Menyusun langkah yang pas</p>
+        </div>
+        <div class="process-step">
+          <div class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2"/><path d="M4.5 20c1-4 4-6 7.5-6s6.5 2 7.5 6"/></svg></div>
+          <h3>Coaching Langsung</h3>
+          <p>Pendampingan implementasi</p>
+        </div>
+        <div class="process-step">
+          <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M4 18 9 11.5 13 15 20 6"/><path d="M14.5 6H20v5.5"/></svg></div>
+          <h3>Evaluasi</h3>
+          <p>Monitoring hasil &amp; mutu</p>
+        </div>
+        <div class="process-step">
+          <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 15c3 0 5.5-2.2 5.5-5.5S15 4 12 4 6.5 6.2 6.5 9.5 9 15 12 15Z"/><path d="M8.5 14 6 21l6-3 6 3-2.5-7"/></svg></div>
+          <h3>Dampak Berkelanjutan</h3>
+          <p>Sistem berjalan mandiri</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--surface);">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-photo"><img src="assets/fotojari-pak-sugeng.jpg" alt="Coach Sugeng Susianto, M.Pd"></div>
+      <div>
+        <div class="section-label">Profil Singkat</div>
+        <h2 style="font-size: clamp(1.5rem,3vw,2rem); line-height:1.25;">Pengalaman yang lahir dari lapangan</h2>
+        <p style="margin-top:16px; color: var(--body-c);">Bukan hanya memberikan pelatihan. Selama lebih dari 20 tahun, Coach Sugeng terlibat langsung dalam membangun, mengelola, dan mengembangkan sekolah.</p>
+        <div class="split-stats">
+          <div><div class="num">20+</div><div class="lbl">Tahun di dunia pendidikan</div></div>
+          <div><div class="num">5</div><div class="lbl">Unit sekolah yang saat ini dikelola</div></div>
+          <div><div class="num">3x</div><div class="lbl">Pengalaman membangun sekolah dari awal</div></div>
+        </div>
+        <a href="profil.html" class="btn btn-ghost dark" style="margin-top:26px;">Lihat rekam jejak lengkap</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Layanan</div>
+      <h2>Lima program pendampingan utama</h2>
+      <p>Bisa diambil satu per satu, atau digabung jadi program menyeluruh.</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card" href="layanan.html">
+        <div class="icon-badge" style="background: linear-gradient(135deg, var(--blue) 0%, var(--blue-2) 100%);"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2"/><path d="M4.5 20c1-4 4-6 7.5-6s6.5 2 7.5 6"/></svg></div>
+        <h3>School Leadership Transformation</h3>
+        <p>Coaching kepala sekolah</p>
+      </a>
+      <a class="cat-card" href="layanan.html">
+        <div class="icon-badge" style="background: linear-gradient(135deg, #6c8cff 0%, #8fa3ff 100%);"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="2.6"/><circle cx="16" cy="9.5" r="2.1"/><path d="M3 19c.7-3 3-4.6 5.5-4.6S13 16 13.7 19"/></svg></div>
+        <h3>School HR Transformation</h3>
+        <p>SDM, KPI, remunerasi</p>
+      </a>
+      <a class="cat-card" href="layanan.html">
+        <div class="icon-badge" style="background: linear-gradient(135deg, #3d5afe 0%, #2946e0 100%);"><svg viewBox="0 0 24 24"><path d="M4 5.5h7.2v14L4 18.2z"/><path d="M20 5.5h-7.2v14L20 18.2z"/></svg></div>
+        <h3>Deep Learning &amp; HOTS</h3>
+        <p>Training &amp; implementasi</p>
+      </a>
+      <a class="cat-card" href="layanan.html">
+        <div class="icon-badge" style="background: linear-gradient(135deg, #6c8cff 0%, #3d5afe 100%);"><svg viewBox="0 0 24 24"><path d="M4 18 9 11.5 13 15 20 6"/><path d="M14.5 6H20v5.5"/></svg></div>
+        <h3>School Quality Transformation</h3>
+        <p>KSP, SKL, audit mutu</p>
+      </a>
+      <a class="cat-card" href="layanan.html">
+        <div class="icon-badge" style="background: linear-gradient(135deg, #2946e0 0%, #3d5afe 100%);"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5z"/><path d="M6.5 10.5V16c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-5.5"/></svg></div>
+        <h3>Membangun Sekolah dari Nol</h3>
+        <p>Feasibility sampai akreditasi</p>
+      </a>
+      <a class="cat-card" href="layanan.html">
+        <div class="icon-badge" style="background: linear-gradient(135deg, #8fa3ff 0%, #6c8cff 100%);"><svg viewBox="0 0 24 24"><path d="M4 19V6.5A2.5 2.5 0 0 1 6.5 4H18v14"/><path d="M4 19a2 2 0 0 0 2 2h12"/></svg></div>
+        <h3>Semua Layanan</h3>
+        <p>Lihat detail lengkap</p>
+      </a>
+    </div>
+  </div>
+</section>
+<section style="background: var(--surface);">
+  <div class="wrap">
+    <div class="smart-grid">
+
+      <!-- KOLOM KIRI -->
+      <div>
+        <div class="section-label">Kenapa Pendampingan dengan Coach Sugeng Berbeda?</div>
+
+        <h2 style="font-size: clamp(1.5rem,3vw,2rem);">
+          Pendampingan yang bekerja dengan cara yang lebih tepat
+        </h2>
+
+        <ul class="checklist">
+          <li>Berbasis pengalaman langsung membangun sekolah, bukan cuma teori</li>
+          <li>Program disesuaikan dengan kondisi sekolah masing-masing</li>
+          <li>Ada pendampingan implementasi, bukan cuma pelatihan sekali jalan</li>
+          <li>Dashboard &amp; monitoring hasil yang jelas dan terukur</li>
+        </ul>
+      </div>
+
+      <!-- KOLOM KANAN -->
+      <div class="smart-photo">
+        <img src="assets/mic-pak-sugeng.jpg">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="section-head center" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <div class="section-label">Testimoni</div>
+      <h2>Kata sekolah yang pernah didampingi</h2>
+    </div>
+
+    <div class="test-grid">
+
+      <div class="test-card">
+
+        <div class="test-stars">★★★★★</div>
+
+        <p class="body">
+          “Pak Sugeng membantu kami melihat persoalan sekolah bukan hanya
+          dari sisi operasional, tetapi dari bagaimana seluruh sistem bisa
+          bergerak lebih terarah. Pendekatannya praktis, terstruktur, dan
+          sangat relevan dengan kondisi sekolah kami.”
+        </p>
+
+        <div class="test-who">
+          <div class="avatar">MN</div>
+
+          <div>
+            <div class="name">Mr. N</div>
+            <div style="font-size:.78rem;color:var(--body-c);margin-top:2px;">
+              Ketua Yayasan, Yayasan Islam Terpadu di Jawa Barat
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:32px;">
+      <a href="testimoni.html" class="btn btn-ghost dark">
+        Lihat semua testimoni
+      </a>
+    </div>
+
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="cta-banner">
+      <div class="inner">
+        <div>
+          <h2>Mulai diskusikan kebutuhan sekolah Anda</h2>
+          <p>Ceritakan tantangannya, nanti kita cari tahu bareng langkah yang paling pas.</p>
+        </div>
+        <div class="btns">
+          <a href="kontak.html" class="btn btn-white">Jadwalkan Sesi</a>
+          <a href="layanan.html" class="btn btn-outline-white">Lihat Layanan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="values-row"><span>Shaleh</span><span>Beradab</span><span>Berjiwa Pemimpin</span><span>Memberi Manfaat</span></div>
+    <p class="closing">“Bekerjalah kamu, maka Allah, Rasul-Nya, dan orang-orang beriman akan melihat pekerjaanmu.” (QS. At-Taubah: 105) — Ilmu adalah aksi nyata.</p>
+    <div class="foot-links"><a href="profil.html">Profil</a><a href="layanan.html">Layanan</a><a href="galeri.html">Galeri</a><a href="testimoni.html">Testimoni</a><a href="kontak.html">Kontak</a></div>
+    <p class="copy">© 2026 Coach Sugeng Susianto, M.Pd.</p>
+  </div>
+</footer>
+
+</body>
+</html>
