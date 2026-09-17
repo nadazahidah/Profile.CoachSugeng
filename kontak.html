@@ -96,11 +96,11 @@
     const wa = document.getElementById('wa').value.trim();
     const layanan = document.getElementById('layanan').value;
     const pesan = document.getElementById('pesan').value.trim();
-    let text = `Assalamu'alaikum Pak Sugeng, saya ${nama}`;
+    let text = `Assalamu'alaikum Kak Nadaa, salam kenal yaa. Saya ${nama}`;
     if (instansi) text += ` dari ${instansi}`;
-    text += `. Saya ingin menjadwalkan sesi konsultasi untuk layanan: ${layanan}.`;
+    text += `. Saya ingin menjadwalkan sesi konsultasi untuk layanan: ${layanan} dengan coach Sugeng`;
     if (pesan) text += `\n\nCatatan: ${pesan}`;
-    text += `\n\nNo. WhatsApp saya: ${wa}`;
+    text += `\n\nNo. WhatsApp saya: ${wa}. Terima kasih Kak Nadaa`;
     const url = `https://wa.me/${6285156728649}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   });
