@@ -1,1 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Galeri Kegiatan — Coach Sugeng Susianto, M.Pd</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+  /* ================================
+     GALERI INTRO
+  ================================= */
+
+  .gal-note{
+    background: var(--surface);
+    border: 1px dashed var(--rule);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: .88rem;
+    color: var(--body-c);
+    margin-bottom: 44px;
+  }
+
+
+  /* ================================
+     GALERI GRID
+  ================================= */
+
+  .gal-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+    align-items:start;
+  }
+
+  .gal-tile{
+    border-radius:18px;
+    overflow:hidden;
+    background:var(--white);
+    box-shadow:var(--shadow-sm);
+  }
+
+
+  /* ================================
+     PLACEHOLDER ART
+  ================================= */
+
+  .gal-tile .art{
+    aspect-ratio:4/3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      linear-gradient(
+        135deg,
+        var(--blue-deep) 0%,
+        var(--ink) 100%
+      );
+  }
+
+  .gal-tile svg{
+    width:46%;
+    height:46%;
+    stroke:var(--blue-2);
+    fill:none;
+    stroke-width:1.3;
+  }
+
+
+  /* ================================
+     CAPTION
+  ================================= */
+
+  .gal-tile .cap{
+    padding:16px 18px;
+    background:var(--white);
+  }
+
+  .gal-tile .cap h3{
+    font-size:.94rem;
+    color:var(--ink);
+    margin:0;
+  }
+
+  .gal-tile .cap p{
+    font-size:.8rem;
+    line-height:1.5;
+    color:var(--body-c);
+    margin-top:4px;
+  }
+
+
+  /* ================================
+     YOUTUBE
+  ================================= */
+
+  .video-wrap{
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+    overflow:hidden;
+  }
+
+  .video-wrap iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+
+
+  /* ================================
+     MP4
+     Mengikuti rasio asli video
+     supaya TIDAK TER-CROP
+  ================================= */
+
+  .gal-video{
+    width:100%;
+    height:auto;
+    display:block;
+    background:#000;
+  }
+
+
+  /* ================================
+     INSTAGRAM
+  ================================= */
+
+  .ig-embed{
+    width:100%;
+    height:520px;
+    overflow:hidden;
+    background:#fff;
+  }
+
+  .ig-embed iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+
+
+  /* ================================
+     RESPONSIVE
+  ================================= */
+
+  @media (max-width:860px){
+
+    .gal-grid{
+      grid-template-columns:repeat(2, 1fr);
+    }
+
+    .ig-embed{
+      height:500px;
+    }
+
+  }
+
+
+  @media (max-width:560px){
+
+    .gal-grid{
+      grid-template-columns:1fr;
+    }
+
+    .ig-embed{
+      height:520px;
+    }
+
+  }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     NAVIGATION
+================================= -->
+
+<nav>
+  <div class="wrap">
+
+    <a href="index.html" class="brand">
+      Coach Sugeng Susianto, M.Pd
+    </a>
+
+    <div class="navlinks">
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="profil.html">
+        Profil &amp; Riwayat
+      </a>
+
+      <a href="layanan.html">
+        Layanan
+      </a>
+
+      <a href="galeri.html" class="active">
+        Galeri
+      </a>
+
+      <a href="testimoni.html">
+        Testimoni
+      </a>
+
+      <a href="kontak.html" class="navcta">
+        Jadwalkan Sesi
+      </a>
+
+    </div>
+
+  </div>
+</nav>
+
+
+
+<!-- ================================
+     PAGE HERO
+================================= -->
+
+<header class="page-hero">
+
+  <div class="wrap">
+
+    <div class="section-label">
+      Galeri
+    </div>
+
+    <h1>
+      Momen dari lapangan
+    </h1>
+
+    <p>
+      Training, coaching, dan praktik pembelajaran.
+    </p>
+
+  </div>
+
+</header>
+
+
+
+<!-- ================================
+     CONTENT
+================================= -->
+
+<section>
+
+  <div class="wrap">
+
+
+    <div class="gal-note">
+
+      Dokumentasi kegiatan, praktik pembelajaran,
+      dan pendampingan sekolah yang dilakukan Coach Sugeng.
+
+    </div>
+
+
+
+    <div class="gal-grid">
+
+
+      <!-- =================================
+           YOUTUBE
+      ================================== -->
+
+      <div class="gal-tile">
+
+        <div class="video-wrap">
+
+          <iframe
+            src="https://www.youtube.com/embed/Gqgc6m437qk?si=m65TYwjLanOi4ZPc"
+            title="Pembelajaran Mendalam (PM) IPAS Kls 3 SD (Sumber-sumber Energi)"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="cap">
+
+          <h3>
+            Contoh Pembelajaran
+          </h3>
+
+          <p>
+            Praktik pembelajaran yang dilakukan Coach Sugeng
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           INSTAGRAM POST 1
+      ================================== -->
+
+      <div class="gal-tile">
+
+        <div class="ig-embed">
+
+          <iframe
+            src="https://www.instagram.com/p/CfaqRqGrpEf/embed"
+            title="Instagram Post"
+            frameborder="0"
+            scrolling="no"
+            allowtransparency="true"
+            allow="encrypted-media">
+          </iframe>
+
+        </div>
+
+        <div class="cap">
+
+          <h3>
+            MUKERWIL V JSIT INDONESIA JAWA BARAT
+          </h3>
+
+          <p>
+            Mengikuti kegiatan MUKERWIL V JSIT Indonesia Wilayah Jawa Barat pada 29-30 Juni 2022
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           INSTAGRAM POST 2
+      ================================== -->
+
+      <div class="gal-tile">
+
+        <div class="ig-embed">
+
+          <iframe
+            src="https://www.instagram.com/p/DS08ChvknRS/embed"
+            title="Instagram Post"
+            frameborder="0"
+            scrolling="no"
+            allowtransparency="true"
+            allow="encrypted-media">
+          </iframe>
+
+        </div>
+
+        <div class="cap">
+
+          <h3>
+            Hasil MUSWIL VI JSIT Indonesia Wilayah Jawa Barat
+          </h3>
+
+          <p>
+            Amanah baru selaku sekretaris JSIT Indonesia Wilayah Jawa Barat periode 2025-2029
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           INSTAGRAM REELS
+      ================================== -->
+
+      <div class="gal-tile">
+
+        <div class="ig-embed">
+
+          <iframe
+  src="https://www.instagram.com/reel/DJLV7TzJw_c/embed"
+  title="Instagram Reel"
+  frameborder="0"
+  scrolling="no"
+  allowtransparency="true"
+  allow="encrypted-media">
+          </iframe>
+
+        </div>
+
+        <div class="cap">
+
+          <h3>
+            Pelatihan Kurikulum SIT Al-Fidaa
+          </h3>
+
+          <p>
+            Implementasi Deep Learning dalam Pembelajaran
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           VIDEO NURUL IMAM
+      ================================== -->
+
+      <div class="gal-tile">
+
+        <video
+          class="gal-video"
+          controls
+          playsinline>
+
+          <source
+            src="assets/nurulimam.mp4"
+            type="video/mp4">
+
+          Browser Anda tidak mendukung pemutaran video.
+
+        </video>
+
+        <div class="cap">
+
+          <h3>
+            Training di SIT Nurul Imam
+          </h3>
+
+          <p>
+            Dokumentasi kegiatan training &amp;
+            pendampingan sekolah.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     FOOTER
+================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+
+    <div class="values-row">
+
+      <span>
+        Shaleh
+      </span>
+
+      <span>
+        Beradab
+      </span>
+
+      <span>
+        Berjiwa Pemimpin
+      </span>
+
+      <span>
+        Memberi Manfaat
+      </span>
+
+    </div>
+
+
+    <p class="closing">
+
+      “Bekerjalah kamu, maka Allah, Rasul-Nya, dan orang-orang beriman akan melihat pekerjaanmu.”
+
+      (QS. At-Taubah: 105) — Ilmu adalah aksi nyata.
+
+    </p>
+
+
+    <div class="foot-links">
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="profil.html">
+        Profil
+      </a>
+
+      <a href="layanan.html">
+        Layanan
+      </a>
+
+      <a href="testimoni.html">
+        Testimoni
+      </a>
+
+      <a href="kontak.html">
+        Kontak
+      </a>
+
+    </div>
+
+    <p class="copy">
+      © 2026 Coach Sugeng Susianto, M.Pd.
+    </p>
+
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
